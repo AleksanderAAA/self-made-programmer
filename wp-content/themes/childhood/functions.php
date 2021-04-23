@@ -7,9 +7,11 @@ function childhood_scripts(){
 
     wp_enqueue_script('childhood-script', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true);
 }
-
+// Включение возможности выбора логотипа
 add_theme_support('custom-logo');
+// Включение возможности создания изображения записи
 add_theme_support('post-thumbnails');
+// Включение возможности создания меню
 add_theme_support('menus');
 
 add_filter('nav_menu_link_attributes', 'filter_nav_link_attributes', 10, 3);
