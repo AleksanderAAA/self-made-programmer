@@ -1,0 +1,12 @@
+MySQl
+база данных: aleksamanatov_portfolio
+user: aleksamanatov
+password: qzbhxqA3ju%c
+
+Почта:
+request@self-made-programmer.ru
+password: bQnx\3Ke5sG3
+
+Сайт self-made-programmer.ru
+admin: alphaadmin
+pass: geibcnjtXELJDBOT (пушистоеЧУДОВИЩЕ)
