@@ -412,7 +412,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-8 offset-md-0 col-lg-6 col-xl-5 offset-xl-1">
+           <!-- <div class="col-md-8 offset-md-0 col-lg-6 col-xl-5 offset-xl-1">
                 <div class="footer__contacts">
                     <div class="footer__contacts-item">
                         <img src="<?php bloginfo('template_url');?>/assets/img/icons/svg/phone.svg" alt="телефон"
@@ -427,7 +427,7 @@
                         <address><?php the_field('adress', 2)?></address>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="row">
             <div class="col-12">

@@ -56,44 +56,34 @@
                 </h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-
-                <div class="feature-1 border">
-                    <div class="icon-wrapper bg-primary">
-                        <span class="flaticon-mortarboard text-white"></span>
-                    </div>
-                    <div class="feature-1-content">
-                        <h2>Personalize Learning</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                        <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <div class="feature-1 border">
-                    <div class="icon-wrapper bg-primary">
-                        <span class="flaticon-school-material text-white"></span>
-                    </div>
-                    <div class="feature-1-content">
-                        <h2>Trusted Courses</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                        <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
-                    </div>
-                </div>
-            </div>
+        <div class="row">                   
+            <?php $posts = get_posts(array(
+                          'numberposts' => 3,
+                          'category_name' => 'navyk',
+                          'orderby' => 'date',
+                          'order' => 'ASC',
+                          'post_type' => 'post',
+                          'suppress_filters' => true
+                       ));
+              foreach($posts as $post){
+                  setup_postdata($post);
+                  ?>
+                  
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                 <div class="feature-1 border">
                     <div class="icon-wrapper bg-primary">
-                        <span class="flaticon-library text-white"></span>
+                        <span class="<?php the_field('navyk_icon');?>"></span>
                     </div>
-                    <div class="feature-1-content">
-                        <h2>Tools for Students</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                        <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                    <div class="feature-1-content">                        
+                        <h2><?php the_title();?></h2>
+                        <p><?php the_field('navyk_description');?></p>
+                        <a href="<?php echo get_permalink(); ?>" class="btn btn-primary px-4 rounded-0">Подробнее</a>
                     </div>
                 </div>
             </div>
+            <?php  }         
+                    wp_reset_postdata();
+            ?>     
         </div>
     </div>
 </div>

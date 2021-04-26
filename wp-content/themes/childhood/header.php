@@ -47,7 +47,7 @@
                             <a href="mailto:<?php the_field('mail', 2)?>"
                                 class="header__contacts-mail"><?php the_field('mail', 2)?></a>
                         </div>
-                        <div class="header__contacts-item">
+                    <!--    <div class="header__contacts-item">
                             <img src="<?php bloginfo('template_url');?>/assets/img/icons/svg/phone.svg" alt="телефон"
                                 class="header__contacts-logo">
                             <div class="header__contacts-tel">
@@ -58,7 +58,7 @@
                             <img src="<?php bloginfo('template_url');?>/assets/img/icons/svg/pointer.svg"
                                 alt="указатель" class="header__contacts-logo">
                             <address><?php the_field('adress', 2)?></address>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
