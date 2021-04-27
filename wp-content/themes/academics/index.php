@@ -56,7 +56,7 @@
                 </h2>
             </div>
         </div>
-        <div class="row">                   
+        <div class="row" id="navyk-row">                   
             <?php $posts = get_posts(array(
                           'numberposts' => 3,
                           'category_name' => 'navyk',
@@ -70,13 +70,18 @@
                   ?>
                   
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <div class="feature-1 border">
+                <div class="feature-1 border navyk-row-item">
                     <div class="icon-wrapper bg-primary">
                         <span class="<?php the_field('navyk_icon');?>"></span>
                     </div>
                     <div class="feature-1-content">                        
                         <h2><?php the_title();?></h2>
-                        <p><?php the_field('navyk_description');?></p>
+                        <p><?php 
+                             $f = get_field('navyk_description');
+                            // echo $f;
+                             $g = wp_trim_words($f, 10, ' ...');
+                             echo $g;                             
+                             ?></p>
                         <a href="<?php echo get_permalink(); ?>" class="btn btn-primary px-4 rounded-0">Подробнее</a>
                     </div>
                 </div>
