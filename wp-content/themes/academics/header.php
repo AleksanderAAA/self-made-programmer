@@ -3,7 +3,7 @@
 
 <head>
     <!-- <title><?php the_title();?></title> -->
-    <title><?php bloginfo('name'); echo "|"; bloginfo('description');?></title>
+    <!-- <title><?php bloginfo('name'); echo "|"; bloginfo('description');?></title> -->
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,10 +30,14 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-9 d-none d-lg-block">
-                    <?php error_log(print_r(the_field('contact_telefon')));?>
                         <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Есть вопросы?</a>
-                        <a href="tel:<?php the_field('contact_telefon')?>" class="small mr-3"><span class="icon-phone2 mr-2"></span> <?php the_field('contact_telefon')?></a>
-                        <a href="mailto:<?php the_field('contact_email')?>" class="small mr-3"><span class="icon-envelope-o mr-2"></span> <?php the_field('contact_email')?></a>
+                        <?php  $phv = get_option('theme_contact_phone_visible');  
+                             if($phv){ ?>
+                               <a href="tel:<?php echo get_option('theme_contact_phone');?>" class="small mr-3"><span class="icon-phone2 mr-2"></span> <?php echo get_option('theme_contact_phone');?></a>
+                        <?php }
+                             if(get_option('theme_contact_mail_visible')){ ?>
+                              <a href="mailto:<?php echo get_option('theme_contact_mail');?>" class="small mr-3"><span class="icon-envelope-o mr-2"></span> <?php echo get_option('theme_contact_mail');?></a>
+                         <?php } ?>
                     </div>
                     <!-- Пока закомментирую т.к. нет никакой регистрации на сайте 
                         <div class="col-lg-3 text-right">
@@ -55,37 +59,32 @@
                         </a> -->
                     </div>
                     <div class="mr-auto">
+                        
+                        
                         <nav class="site-navigation position-relative text-right" role="navigation">
-                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                                <li class="active">
-                                    <a href="index.html" class="nav-link text-left">Home</a>
-                                </li>
-                                <li class="has-children">
-                                    <a href="about.html" class="nav-link text-left">About Us</a>
-                                    <ul class="dropdown">
-                                        <li><a href="teachers.html">Our Teachers</a></li>
-                                        <li><a href="about.html">Our School</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="admissions.html" class="nav-link text-left">Admissions</a>
-                                </li>
-                                <li>
-                                    <a href="courses.html" class="nav-link text-left">Courses</a>
-                                </li>
-                                <li>
-                                    <a href="contact.html" class="nav-link text-left">Contact</a>
-                                </li>
-                            </ul>
-                            </ul>
+                        <?php 
+                                wp_nav_menu([
+                                    'theme_location' => 'header_menu',
+                                    'container' => false,
+                                    'menu_class' => 'site-menu main-menu js-clone-nav mr-auto d-none d-lg-block',
+                                    'echo' => true,
+                                    'fallback_cb' => 'wp_page_menu',
+                                    'items_wrap' => '<ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">%3$s</ul>',
+                                    'depth' => 2,
+                                    'walker' => new Academics_Self_Made_Walker_Nav_Menu  
+                                ]);
+                                ?>                          
+                           
                         </nav>
 
                     </div>
                     <div class="ml-auto">
                         <div class="social-wrap">
-                            <a href="#"><span class="icon-facebook"></span></a>
+                        
+                              
+                            <!-- <a href="#"><span class="icon-facebook"></span></a>
                             <a href="#"><span class="icon-twitter"></span></a>
-                            <a href="#"><span class="icon-linkedin"></span></a>
+                            <a href="#"><span class="icon-linkedin"></span></a> -->
 
                             <a href="#"
                                 class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span

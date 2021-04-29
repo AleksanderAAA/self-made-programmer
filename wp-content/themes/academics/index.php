@@ -96,8 +96,6 @@
 
 <div class="site-section">
     <div class="container">
-
-
         <div class="row mb-5 justify-content-center text-center">
             <div class="col-lg-6 mb-5">
                 <h2 class="section-title-underline mb-3">
@@ -273,7 +271,7 @@
 
 
 
-<div class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
+<!-- <div class="section-bg style-1" style="background-image: url('images/about_1.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -293,10 +291,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- // 05 - Block -->
-<div class="site-section">
+<!-- <div class="site-section">
     <div class="container">
         <div class="row mb-5">
             <div class="col-lg-4">
@@ -402,10 +400,10 @@
         </div>
 
     </div>
-</div>
+</div> -->
 
 
-<div class="section-bg style-1" style="background-image: url('images/hero_1.jpg');">
+<!-- <div class="section-bg style-1" style="background-image: url('images/hero_1.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
@@ -430,9 +428,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="news-updates">
+<!-- <div class="news-updates">
     <div class="container">
 
         <div class="row">
@@ -522,9 +520,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="site-section ftco-subscribe-1" style="background-image: url('images/bg_1.jpg')">
+<!-- <div class="site-section ftco-subscribe-1" style="background-image: url('images/bg_1.jpg')">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-7">
@@ -539,6 +537,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <?php get_footer(); ?>

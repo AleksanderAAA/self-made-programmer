@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/inc/Academics_Self_Made_Walker_Nav_Menu.php';
+
 add_action('wp_enqueue_scripts', 'academicsselfmade_scripts');
 
 function academicsselfmade_scripts(){
@@ -33,10 +36,34 @@ function academicsselfmade_scripts(){
     wp_enqueue_script('academicsselfmade-mainjs',  get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
 }
 
-add_theme_support('custom-logo');
-add_theme_support('post-thumbnails');
-add_theme_support('menus');
 
+
+function academicsselfmade_setup(){
+    // Включение возможности выбора логотипа
+    add_theme_support('custom-logo');
+    
+    // Включение возможности создания изображения записи
+    add_theme_support('post-thumbnails');
+    
+    // Включение возможности создания меню
+    add_theme_support('menus');
+    
+    // Включение поддержки вывода title старницы(обязательно использование wp_head())
+    add_theme_support('title-tag');
+
+    // Регистрируем меню
+    register_nav_menus(array(
+        'header_menu' => 'Main menu',
+        'social_menu' => 'Social menu'
+    ));
+
+}
+
+add_action('after_setup_theme', 'academicsselfmade_setup');
+
+
+
+// Этот фильтр и функция делает активным текущий пункт меню
 add_filter('nav_menu_link_attributes', 'filter_nav_link_attributes', 10, 3);
 
 function filter_nav_link_attributes($atts, $item, $args){
@@ -59,4 +86,78 @@ function filter_nav_link_attributes($atts, $item, $args){
 
     return $atts;
 } 
+
+/**
+ * Кастомизация настроек темы в админке
+ *
+ * @param [type] $wp_customize
+ * @return void
+ */
+
+function academicsselfmade_customize_register($wp_customize){
+    // Секция настроек контактных данных
+    $wp_customize->add_section('header_site_section', array(
+        'title' => 'Шапка сайта',
+        'capability' => 'edit_theme_options',
+        'description' => 'Контактные данные отображаемые в шапке сайта'
+    ));
+
+    // Настройка электронной почты
+    // Сначала флаг отображения почты
+    $wp_customize->add_setting('theme_contact_mail_visible', array(
+        'default' => 'false', 
+        'type' => 'option' 
+    ));
+
+    $wp_customize->add_control('theme_contact_mail_visible_control', array(
+        'type' => 'checkbox',
+        'label' => 'Показывать электронную почту',
+        'section' => 'header_site_section',
+        'settings' => 'theme_contact_mail_visible'
+    ));
+    // Теперь сама почта
+    $wp_customize->add_setting('theme_contact_mail', array(
+        'default' => '', 
+        'type' => 'option' 
+    ));
+
+    $wp_customize->add_control('theme_contact_mail_control', array(
+        'type' => 'text',
+        'label' => 'Электронная почта',
+        'section' => 'header_site_section',
+        'settings' => 'theme_contact_mail'
+    ));
+
+    // Настройка телефона
+    // Сначала флаг отображения телефона
+    $wp_customize->add_setting('theme_contact_phone_visible', array(
+        'default' => 'false', 
+        'type' => 'option' 
+    ));
+
+    $wp_customize->add_control('theme_contact_phone_visible_control', array(
+        'type' => 'checkbox',
+        'label' => 'Показывать телефон',
+        'section' => 'header_site_section',
+        'settings' => 'theme_contact_phone_visible'
+    ));
+    // Теперь сам телефон
+    $wp_customize->add_setting('theme_contact_phone', array(
+        'default' => '', 
+        'type' => 'option' 
+    ));
+
+    $wp_customize->add_control('theme_contact_phone_control', array(
+        'type' => 'text',
+        'label' => 'Телефон',
+        'section' => 'header_site_section',
+        'settings' => 'theme_contact_phone'
+    ));
+
+
+
+
+}
+
+add_action('customize_register', 'academicsselfmade_customize_register');
 ?>
