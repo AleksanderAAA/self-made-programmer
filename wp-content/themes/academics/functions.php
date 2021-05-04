@@ -63,7 +63,8 @@ add_action('after_setup_theme', 'academicsselfmade_setup');
 
 
 
-// Этот фильтр и функция делает активным текущий пункт меню
+// Этот фильтр и функция делает активным текущий пункт меню, но есть более лучшее решение
+// переопределить поведение меню пример в файле /inc/Academics_Self_Made_Walker_Nav_Menu.php 
 add_filter('nav_menu_link_attributes', 'filter_nav_link_attributes', 10, 3);
 
 function filter_nav_link_attributes($atts, $item, $args){
@@ -152,6 +153,27 @@ function academicsselfmade_customize_register($wp_customize){
         'label' => 'Телефон',
         'section' => 'header_site_section',
         'settings' => 'theme_contact_phone'
+    ));
+
+
+    // Секция настроек контактных данных
+    $wp_customize->add_section('fron_page_section', array(
+        'title' => 'Разделы главной страницы',
+        'capability' => 'edit_theme_options',
+        'description' => 'Разделы главной страницы сайта'
+    ));
+    // Настройка слайдера
+    // Сначала флаг отображения слайдера
+    $wp_customize->add_setting('theme_slider_visible', array(
+        'default' => 'false', 
+        'type' => 'option' 
+    ));
+
+    $wp_customize->add_control('theme_slider_visible_control', array(
+        'type' => 'checkbox',
+        'label' => 'Показывать слайдер',
+        'section' => 'fron_page_section',
+        'settings' => 'theme_slider_visible'
     ));
 
 

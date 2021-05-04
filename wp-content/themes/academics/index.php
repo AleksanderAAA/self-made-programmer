@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<?php if(get_option('theme_slider_visible')){ ?>
 <div class="hero-slide owl-carousel site-blocks-cover">
 <?php 
               $posts = get_posts(array(
@@ -46,6 +46,12 @@
               wp_reset_postdata();
         ?>  
 </div>
+<?php } 
+else {?>
+    <div class="site-section invisible-block">
+        <p></p>
+    </div>
+<?php } ?>
 
 <div class="site-section">
     <div class="container">
@@ -108,7 +114,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="owl-slide-3 owl-carousel">
-                    <div class="course-1-item">
+                     
+                 
+                      <div class="course-1-item">
                         <figure class="thumnail">
                             <a href="course-single.html"><img src="images/course_1.jpg" alt="Image"
                                     class="img-fluid"></a>

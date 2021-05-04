@@ -48,3 +48,13 @@ Text Domain: academicsselfmade
     text-align: center;
     left: 50%;
 }*/
+
+
+/* .invisible-block {
+    padding: 5em 0;
+    opacity: 100%;
+} */
+
+.site-section.invisible-block {
+    padding: 1em 0;
+}
