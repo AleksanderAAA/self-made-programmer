@@ -350,5 +350,7 @@
      }
 
      equalHeight($(".navyk-row-item"));
+     //equalHeight($(".owl-item"));
+     equalHeight($(".course-1-item"));
 
  });

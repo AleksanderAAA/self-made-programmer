@@ -5,8 +5,6 @@ require_once __DIR__ . '/inc/Academics_Self_Made_Walker_Nav_Menu.php';
 add_action('wp_enqueue_scripts', 'academicsselfmade_scripts');
 
 function academicsselfmade_scripts(){
-    wp_enqueue_style('academicsselfmade-style', get_stylesheet_uri());
-
     wp_enqueue_style('academicsselfmade-icomoon', get_template_directory_uri() . '/assets/fonts/icomoon/style.css');
     wp_enqueue_style('academicsselfmade-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
     wp_enqueue_style('academicsselfmade-jqueryui', get_template_directory_uri() . '/assets/css/jquery-ui.css');
@@ -18,6 +16,7 @@ function academicsselfmade_scripts(){
     wp_enqueue_style('academicsselfmade-aoscss', get_template_directory_uri() . '/assets/css/aos.css');   
     wp_enqueue_style('academicsselfmade-jquerymbYTPlayercss', get_template_directory_uri() . '/assets/css/jquery.mb.YTPlayer.min.css');   
     wp_enqueue_style('academicsselfmade-stylecss', get_template_directory_uri() . '/assets/css/style.css');   
+    wp_enqueue_style('academicsselfmade-style', get_stylesheet_uri());
 
     wp_enqueue_script('academicsselfmade-jquery331js',  get_template_directory_uri() . '/assets/js/jquery-3.3.1.min.js', array(), null, true); 
     wp_enqueue_script('academicsselfmade-jquerymigrate301js',  get_template_directory_uri() . '/assets/js/jquery-migrate-3.0.1.min.js', array(), null, true); 

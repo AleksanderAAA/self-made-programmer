@@ -58,3 +58,13 @@ Text Domain: academicsselfmade
 .site-section.invisible-block {
     padding: 1em 0;
 }
+
+.course-1-item {
+    position: relative;
+}
+
+.btn-more {
+    position: absolute;
+    margin-top: -20px;
+    bottom: 0px;
+}

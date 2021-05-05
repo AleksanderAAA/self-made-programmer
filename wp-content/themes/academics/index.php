@@ -126,45 +126,44 @@ else {?>
               foreach($posts as $post){
                   setup_postdata($post);
                   ?>
-<div class="course-1-item">
-                        <figure class="thumnail">
-                            <a href="course-single.html"><img src="<?php bloginfo('template_url');?>/assets/images/course_1.jpg" alt="Image"
-                                    class="img-fluid"></a>
-                            <div class="price"><?php the_field('uslugi_cost');?></div>
-                            <div class="category">
-                                <h3> <?php
-                                        $field = get_field('uslugi_programm_type');
-                                        echo $field['label'];
-                                        ?>
-                            </h3>
-                            </div>
-                        </figure>
-                        <div class="course-1-content pb-4">
-                            <h2><?php the_content();?></h2>
-                            <div class="rating text-center mb-3">
-                                <span class="icon-star2 text-warning"></span>
-                                <span class="icon-star2 text-warning"></span>
-                                <span class="icon-star2 text-warning"></span>
-                                <span class="icon-star2 text-warning"></span>
-                                <span class="icon-star2 text-warning"></span>
-                            </div>
-                            <p class="desc mb-4"><?php 
-                             $f = get_field('uslugi_polnoe_opisanie');
-                            // echo $f;
-                             $g = wp_trim_words($f, 10, ' ...');
-                             echo $g;                             
-                             ?></p>
-                            <p><a href="<?php echo get_permalink(); ?>" class="btn btn-primary rounded-0 px-4">Подробнее</a></p>
-                        </div>
-                    </div>                 
-            
-            <?php  }         
-                    wp_reset_postdata();
-            ?>     
-       
-                 
-                      
-
+            <div class="course-1-item">
+                                    <figure class="thumnail">
+                                        <a href="course-single.html"><img src="<?php bloginfo('template_url');?>/assets/images/course_1.jpg" alt="Image"
+                                                class="img-fluid"></a>
+                                        <div class="price"><?php the_field('uslugi_cost');?></div>
+                                        <div class="category">
+                                            <h3> <?php
+                                                    $field = get_field('uslugi_programm_type');
+                                                    echo $field['label'];
+                                                    ?>
+                                        </h3>
+                                        </div>
+                                    </figure>
+                                    <div class="course-1-content pb-4">
+                                        <h2><?php the_content();?></h2>
+                                        <div class="rating text-center mb-3">
+                                            <span class="icon-star2 text-warning"></span>
+                                            <span class="icon-star2 text-warning"></span>
+                                            <span class="icon-star2 text-warning"></span>
+                                            <span class="icon-star2 text-warning"></span>
+                                            <span class="icon-star1 text-warning"></span>
+                                        </div>
+                                        <p class="desc mb-4"><?php 
+                                        $f = get_field('uslugi_polnoe_opisanie');
+                                        // echo $f;
+                                        $g = wp_trim_words($f, 10, ' ...');
+                                        echo $g;                             
+                                        ?></p>
+                                        
+                                    </div>
+                                    <div class="course-1-content pb-4 btn-more">
+                                        <p><a href="<?php echo get_permalink(); ?>" class="btn btn-primary rounded-0 px-4">Подробнее</a></p>
+                                    </div>    
+                                </div>                 
+                        
+                        <?php  }         
+                                wp_reset_postdata();
+                        ?>    
                 </div>
 
             </div>
