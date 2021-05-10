@@ -2,10 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
-                <p class="mb-4"><img src="images/logo.png" alt="Image" class="img-fluid"></p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.
+                <!-- <p class="mb-4"><img src="images/logo.png" alt="Image" class="img-fluid"></p> -->
+                <?php the_custom_logo();?>
+                <p>История моего становления как программиста начинается с далекого 1995 года
                 </p>
-                <p><a href="#">Learn More</a></p>
+                <p><a href="<?php echo esc_url( home_url( '/category/history' ) ); ?>">Подробнее</a></p>
             </div>
             <div class="col-lg-3">
                 <h3 class="footer-heading"><span>Our Campus</span></h3>
@@ -48,8 +49,8 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
                         document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="icon-heart"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </script> Все права защищены | Эта тема сделана с <i class="icon-heart"
+                            aria-hidden="true"></i> компанией <a href="https://colorlib.com" target="_blank">Colorlib</a> и адаптирована <a href="/">мной</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>

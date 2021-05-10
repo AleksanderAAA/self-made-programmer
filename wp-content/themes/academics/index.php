@@ -126,11 +126,11 @@ else {?>
               foreach($posts as $post){
                   setup_postdata($post);
                   ?>
-            <div class="course-1-item">
+                      <div class="course-1-item">
                                     <figure class="thumnail">
                                         <a href="course-single.html"><img src="<?php bloginfo('template_url');?>/assets/images/course_1.jpg" alt="Image"
                                                 class="img-fluid"></a>
-                                        <div class="price"><?php the_field('uslugi_cost');?></div>
+                                        <div class="price"><?php the_field('uslugi_website_cost');?>&#8381</div>
                                         <div class="category">
                                             <h3> <?php
                                                     $field = get_field('uslugi_programm_type');
@@ -145,8 +145,8 @@ else {?>
                                             <span class="icon-star2 text-warning"></span>
                                             <span class="icon-star2 text-warning"></span>
                                             <span class="icon-star2 text-warning"></span>
-                                            <span class="icon-star2 text-warning"></span>
-                                            <span class="icon-star1 text-warning"></span>
+                                            <span class="icon-star_border text-warning"></span>
+                                            <span class="icon-star_border text-warning"></span>
                                         </div>
                                         <p class="desc mb-4"><?php 
                                         $f = get_field('uslugi_polnoe_opisanie');

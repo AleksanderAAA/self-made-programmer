@@ -23,11 +23,14 @@ get_header();
 				elseif($catt[0]->slug == 'navyk'){
                     get_template_part( 'template-parts/content/content-navyk', get_post_type());			
 				}
+				elseif($catt[0]->slug == 'moya-istoriya'){
+                    get_template_part( 'template-parts/content/content-moya-istoriya', get_post_type());			
+				}
 				else{
 					get_template_part( 'template-parts/content/content', get_post_type());			
 				}
 				
-
+				
 			endwhile; // End the loop.
 			?>
 
